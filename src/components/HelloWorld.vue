@@ -42,3 +42,16 @@ h3 {
   }
 }
 </style>
+
+
+<style lang="scss">
+@import "@/styles/_base.scss";
+@import "@/styles/_variables.scss";
+.my-component {
+  background-color: var(--background-color);
+}
+.secondary-color {
+  background-color: var(--secondary-color);
+}
+
+</style>

@@ -1,6 +1,6 @@
 <template>
-    <div class="col me-5 p-5" style="
-        background: #2864BF;
+    <div class="col me-5 p-5 mb-5 mb-lg-0 primary-paint " style="
+    
         flex-shrink: 0;
     ">
         <v-avatar color="surface-variant" size="100" ></v-avatar>

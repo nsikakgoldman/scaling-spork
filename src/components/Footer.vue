@@ -11,11 +11,10 @@ export default {
 </script>
 
 <template>
-    <div class="col-3">
+    <div class="col-12 col-lg-3">
         <p 
-            class="text-center"
+            class="text-lg-center text-left"
             style="
-                color: #7D7575;
                 font-family: Kaisei Tokumin;
                 font-size: 24px;
                 font-style: normal;
@@ -25,9 +24,8 @@ export default {
         <p
             v-for="x in foot_link"
             :key="x.id"
-            class="text-center"
+            class="text-lg-center text-left"
             style="
-                color: #000;
                 font-family: Kaisei Tokumin;
                 font-size: 20px;
                 font-style: normal;

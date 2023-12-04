@@ -1,0 +1,15 @@
+// src/styles/_base.scss
+
+@import "variables";
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--text-color-dark);
+    background-color: var(--background-color-dark);
+  }
+}

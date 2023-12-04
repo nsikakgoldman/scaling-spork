@@ -14,7 +14,24 @@ export default {
         return {
             aircraft,
         }
-    }
+    },
+    mounted() {
+    // Detect user's preferred color scheme
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Change theme based on user's preferred color scheme
+    this.$emit('theme-changed', prefersDarkMode ? 'dark' : 'light');
+
+    // Listen for changes in the user's color scheme preference
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener((e) => {
+      this.$emit('theme-changed', e.matches ? 'dark' : 'light');
+    });
+  },
+  methods: {
+    updateDarkMode(event) {
+      this.isDarkMode = event.matches;
+    },
+  },
 }
 </script>
 
@@ -22,7 +39,7 @@ export default {
     <div class="container" >
         <div class="row">
         <div class="col-12" style="margin-top: 66px;"></div>
-        <div class="col-6 mt-5">
+        <div class="col-lg-6 col-12 mt-5">
             <div class="col-12 kun-x_main-text">
                 There’s nothing more 
 Precious than time so
@@ -33,25 +50,25 @@ save it
 safely.
             </div>
             
-            <a href="#" class="btn btn-primary" style="color: #000;
+            <a href="#" class="btn btn-primary mt-5 col-12 col-lg-7 mb-2" style="
                     font-family: Kaisei Tokumin;
                     font-size: 32px;
                     font-style: normal;
                     font-weight: 700;
-                    width: 393px;
-                    height: 88px;
-                    flex-shrink: 0;
-                    margin-top: 83px;
-                    padding-top: 21px;
+                    /* width: 393px;
+                    height: 88px; */
+                    /* flex-shrink: 0; */
+                    /* margin-top: 83px; */
+                    /* padding-top: 21px;
                     padding-left: 73;
                     padding-bottom: 21;
-                    padding-right: 73;
+                    padding-right: 73; */
                     border-radius: 15px;
                     background: #2864BF;
                     line-height: normal;">Open an account</a>
         </div>
-        <div class="col-6">
-            <img :src="aircraft" alt="">
+        <div class="col-lg-6 col-12">
+            <img :src="aircraft" class="col-12" alt="" >
         </div>
         
         </div>
@@ -73,16 +90,15 @@ safely.
     </div>
     <div class="container" id="pricing" style="padding-top: 100px;">
         <div class="row">
-            <div class="col-6 kun-x_main-text">
+            <div class="col-lg-6 col-12 kun-x_main-text">
                 Lorem Ipsum consectetur adipiscing elit
                 <SecondSectionSubtitle />
                 <SecondSectionSubtitle />
                 <SecondSectionSubtitle />
                 <SecondSectionSubtitle />
             </div>
-            <div class="col-6 p-4" style="border-radius: 15px;
-                height: 100%;
-                background: #D9D9D9; ">
+            <div class="col-lg-6 col-12 p-4 secondary-paint" style="border-radius: 15px;
+                height: 100%;">
                 <p style="
                     font-family: Kaisei Tokumin;
                     font-size: 16px;
@@ -90,39 +106,30 @@ safely.
                     font-weight: 700;
                     margin-bottom: 7px;
                     line-height: normal;" >New Payment</p>
-                <QuickSignUpFormField />
-                <QuickSignUpFormField />
-                <QuickSignUpFormField />
-                <div style="margin-top: 61;" class="row p-4">
-                    <div class="col-6">
-                        <a href="#" class="btn btn-primary ms-5" style="
+                <div class="row mb-2 ">
+                    <QuickSignUpFormField />
+                    <QuickSignUpFormField />
+                    <QuickSignUpFormField />
+                </div>
+                <div  class="row ">
+                    <div class="col-lg-6 col-12">
+                        <a href="#" class="btn btn-primary ms-lg-5 col-lg-6 col-12 mb-lg-0 mb-2" style="
                             font-family: Kaisei Tokumin;
-                            font-size: 20px;
+                            
                             font-style: normal;
                             font-weight: 700;
-                            line-height: normal;
-                            flex-shrink: 0;
-                            flex-shrink: 0;
-                            padding-top: 23px;
-                            padding-bottom: 25px;
-                            padding-left: 46px;
-                            padding-right: 46px;
+                            
                             ">New Payment
                         </a>
                     </div>
-                    <div class="col-6">
-                        <a href="#" class="btn btn-primary ms-5" style="
+                    
+                    <div class="col-12 col-lg-6">
+                        <a href="#" class="btn btn-primary ms-lg-5 col-lg-8 col-12" style="
                             font-family: Kaisei Tokumin;
-                            font-size: 16px;
+                            
                             font-style: normal;
                             font-weight: 400;
-                            line-height: normal;
-                            flex-shrink: 0;
-                            flex-shrink: 0;
-                            padding-top: 31px;
-                            padding-bottom: 23px;
-                            padding-left: 20px;
-                            padding-right: 20px;
+                            
                             ">Scheduled Payment
                         </a>
                     </div>
@@ -135,7 +142,7 @@ safely.
     </div> 
     <div class="container" id="support">
         <div class="row">
-            <div class="col-12" style="margin-bottom: 30px;">
+            <div class="col-12" >
                 <p class="kun-x_main-text">Lorem Ipsum consectetur adipiscing <br> elit</p>
             </div>
             <SupportCard />
@@ -163,7 +170,7 @@ safely.
             <p 
                 class="text-center col-4"
                 style="
-                    color: #000;
+                    
                     font-family: Kaisei Tokumin;
                     font-size: 20px;
                     font-style: normal;

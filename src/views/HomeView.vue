@@ -11,8 +11,22 @@ export default {
         return {
           halfCircleLeft,
           halfCircleRight,
-          aircraft
+          aircraft,
+          headerStyles: {
+        color: '',
+      },
         }
+    },
+    mounted() {
+      this.applyTheme();
+      const mql =window.matchMedia('(prefers-color-scheme: dark)');
+      mql.addEventListener(this.applyTheme);
+    },
+    methods: {
+      applyTheme() {
+        const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        this.headerStyles.color = darkMode? 'white' : 'black';
+      }
     }
 }
 </script>
@@ -26,11 +40,11 @@ export default {
         <div class="col-6">
           <div class="row">
             <!-- this row contains all the left half circle -->
-            <div class="col-12" style="margin-top: 170px;">
+            <div class="col-12 d-none d-lg-block" style="margin-top: 170px;">
               <img :src="halfCircleLeft" alt="" srcset="">
             </div>
             <div class="" style="height: 993px;"></div>
-            <div class="col-12">
+            <div class="col-12 d-none d-lg-block">
               <img :src="halfCircleLeft" alt="" srcset="">
             </div>
           </div>
@@ -39,11 +53,11 @@ export default {
           <div class="row">
             <!-- this row contains all the right half circle -->
             <div style="height: 864px;"></div>
-            <div class="col-12 d-flex justify-content-end">
+            <div class="col-12 d-lg-flex d-none justify-content-end">
               <img :src="halfCircleRight" alt="" srcset="">
             </div>
             <div class="" style="height: 1553px;"></div>
-            <div class="col-12 d-flex justify-content-end">
+            <div class="col-12 d-lg-flex d-none justify-content-end">
               <img :src="halfCircleRight" alt="" srcset="">
             </div>
           </div>

@@ -1,7 +1,7 @@
 <template>
-    <div class="col-12" style="
+    <div class="col-12 ms-lg-5" style="
         margin-bottom: 30px;
-        margin-left: 40px;
+        
         font-family: Kaisei Tokumin;
         font-size: 24px;
         font-style: normal;
