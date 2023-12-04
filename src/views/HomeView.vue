@@ -17,17 +17,7 @@ export default {
       },
         }
     },
-    mounted() {
-      this.applyTheme();
-      const mql =window.matchMedia('(prefers-color-scheme: dark)');
-      mql.addEventListener(this.applyTheme);
-    },
-    methods: {
-      applyTheme() {
-        const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        this.headerStyles.color = darkMode? 'white' : 'black';
-      }
-    }
+    
 }
 </script>
 

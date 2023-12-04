@@ -11,6 +11,25 @@ export default {
       isDarkMode: false,
     };
   },
+  mounted() {
+    this.setTheme(); // Set initial theme
+
+    // Listen for changes in the color scheme
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      this.setTheme()
+    });
+  },
+  methods: {
+    setTheme() {
+      const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      // Set the data attribute on the body to switch themes
+      document.body.setAttribute('data-theme', darkMode ? 'dark' : 'light');   
+      document.documentElement.style.setProperty('--background-color', darkMode ? '#000' : 'white');
+      document.documentElement.style.setProperty('--text-color', darkMode ? 'white' : 'black');
+    },
+    
+  },
   
 };
 </script>

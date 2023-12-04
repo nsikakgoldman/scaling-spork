@@ -10,21 +10,16 @@ export default {
             logo_image : img,
         }
     },
-    methods : {
-        scrollIntoView(id) {
-            var elem = document.getElementById(id);
-            elem.scrollIntoView();
-        }
-    }
+    
 }
 </script>
 
 <template>
-    <div class="container px-5 text-center my-component">
+    <div :class="'container px-5 text-center my-component'" >
         <div class="col-12">
                 </div>
             <div>
-                <nav class="navbar d-lg-block d-none navbar-expand-lg bg-transparent">
+                <nav class="navbar d-lg-block d-none navbar-expand-lg " >
                     <div class="container">
                         <RouterLink to="/" class="navbar-brand kun-x_nav-btn kun-x_ld-nav-txt-sz">
                             <img :src="logo_image">
@@ -55,7 +50,7 @@ export default {
                         </div>
                     </div>
                 </nav>
-                <nav class="navbar d-lg-none d-block bg-body-tertiary fixed-top">
+                <nav class="navbar d-lg-none d-block bg-body-tertiary bg-black fixed-top">
                 <div class="container-fluid">
                     <RouterLink to="/" class="navbar-brand kun-x_nav-btn  kun-x_ld-nav-txt-sz">
                             <img :src="logo_image" class="col-6" >
@@ -70,7 +65,7 @@ export default {
                         </div>
                         <div class="offcanvas-body">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item">
+                                <li class="nav-item text-white">
                                 <!-- <RouterLink to="/about" class="nav-link active kun-x_nav-btn kun-x_ld-nav-txt-sz" aria-current="page">Service</RouterLink> -->
                                 <a href="#service" @click="scrollIntoView('service')" class="nav-link active kun-x_nav-btn kun-x_ld-nav-txt-sz" aria-current="page" >Service</a>
                             </li>
@@ -118,11 +113,8 @@ export default {
 <style lang="scss">
 @import "@/styles/_base.scss";
 @import "@/styles/_variables.scss";
-.my-component {
-  background-color: var(--background-color);
-}
-.secondary-color {
-  background-color: var(--secondary-color);
-}
 
+a {
+  color: var(--text-color) !important;
+}
 </style>

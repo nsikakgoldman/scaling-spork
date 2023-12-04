@@ -15,23 +15,7 @@ export default {
             aircraft,
         }
     },
-    mounted() {
-    // Detect user's preferred color scheme
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    // Change theme based on user's preferred color scheme
-    this.$emit('theme-changed', prefersDarkMode ? 'dark' : 'light');
-
-    // Listen for changes in the user's color scheme preference
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener((e) => {
-      this.$emit('theme-changed', e.matches ? 'dark' : 'light');
-    });
-  },
-  methods: {
-    updateDarkMode(event) {
-      this.isDarkMode = event.matches;
-    },
-  },
+    
 }
 </script>
 
@@ -98,13 +82,16 @@ safely.
                 <SecondSectionSubtitle />
             </div>
             <div class="col-lg-6 col-12 p-4 secondary-paint" style="border-radius: 15px;
-                height: 100%;">
+                height: 100%;
+                background-color: #D9D9D9;
+                ">
                 <p style="
                     font-family: Kaisei Tokumin;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 700;
                     margin-bottom: 7px;
+                    color: black;
                     line-height: normal;" >New Payment</p>
                 <div class="row mb-2 ">
                     <QuickSignUpFormField />
@@ -115,7 +102,7 @@ safely.
                     <div class="col-lg-6 col-12">
                         <a href="#" class="btn btn-primary ms-lg-5 col-lg-6 col-12 mb-lg-0 mb-2" style="
                             font-family: Kaisei Tokumin;
-                            
+                            color: black !important;
                             font-style: normal;
                             font-weight: 700;
                             
@@ -126,7 +113,7 @@ safely.
                     <div class="col-12 col-lg-6">
                         <a href="#" class="btn btn-primary ms-lg-5 col-lg-8 col-12" style="
                             font-family: Kaisei Tokumin;
-                            
+                            color: black !important;
                             font-style: normal;
                             font-weight: 400;
                             

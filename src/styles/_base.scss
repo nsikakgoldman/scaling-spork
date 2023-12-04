@@ -1,15 +1,15 @@
-// src/styles/_base.scss
+// // src/styles/_base.scss
 
-@import "variables";
+// @import "variables";
 
-body {
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
+// body {
+//   color: var(--text-color);
+//   background-color: var(--background-color);
+// }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    color: var(--text-color-dark);
-    background-color: var(--background-color-dark);
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     color: var(--text-color-dark);
+//     background-color: var(--background-color-dark);
+//   }
+// } 
